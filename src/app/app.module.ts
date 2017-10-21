@@ -15,6 +15,8 @@ import { AuthService } from './services/auth/auth.service';
 import { HttpModule } from '@angular/http';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { FormLoginComponent } from './modules/forms/form-login/form-login.component';
+import { NoauthOnlyGuard } from './guard/noauth/noauth-only.guard';
+import { UsersOnlyGuard } from './guard/users/users-only.guard';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { FormLoginComponent } from './modules/forms/form-login/form-login.compon
     HttpModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    NoauthOnlyGuard,
+    UsersOnlyGuard
   ],
   bootstrap: [AppComponent]
 })
