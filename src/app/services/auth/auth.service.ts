@@ -4,6 +4,7 @@ import { Http, Headers } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 import { ModelToken } from '../../models/model-token';
+import { Router } from '@angular/router';
 
 @Injectable()
 /**
@@ -18,6 +19,10 @@ export class AuthService {
 
   private _tokenKey = 'token';
   private _token: string;
+
+  get isUserLoggedIn() {
+    return this.user && this.token;
+  }
 
   get user () {
     if (!this._currentUser && localStorage.getItem(this._currentUserKey)) {
@@ -45,7 +50,10 @@ export class AuthService {
     this._token = token;
   }
 
-  constructor(private http: Http) { }
+  constructor(
+    private http: Http,
+    private router: Router
+  ) { }
 
   register(user: ModelUser): Promise<ModelUser> {
     return this.http
@@ -74,10 +82,8 @@ export class AuthService {
   logout() {
     this.user = null;
     this.token = null;
-  }
 
-  isUserLoggedIn() {
-    return this.user && this.token;
+    this.router.navigateByUrl('/');
   }
 
   private handleError(error: any): Promise<any> {
