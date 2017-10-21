@@ -36,7 +36,7 @@ export class FormRegistrationComponent implements OnInit {
       .then(() => {
         this.router.navigateByUrl('/');
       }).catch(() => {
-        console.log('dump user on login page');
+        this.router.navigateByUrl('/auth/login');
       });
   }
 }
