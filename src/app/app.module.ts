@@ -13,6 +13,8 @@ import { FormBootstrapComponent } from './modules/forms/form-bootstrap/form-boot
 import { PageTitleComponent } from './modules/layouts/page-title/page-title.component';
 import { AuthService } from './services/auth/auth.service';
 import { HttpModule } from '@angular/http';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { FormLoginComponent } from './modules/forms/form-login/form-login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { HttpModule } from '@angular/http';
     RegisterComponent,
     FormRegistrationComponent,
     FormBootstrapComponent,
-    PageTitleComponent
+    PageTitleComponent,
+    LoginComponent,
+    FormLoginComponent
   ],
   imports: [
     BrowserModule,
