@@ -1,5 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModelUser } from '../../../models/model-user';
+import { AuthService } from '../../../services/auth/auth.service';
+import { FormBootstrapComponent } from '../form-bootstrap/form-bootstrap.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-registration',
@@ -7,14 +10,33 @@ import { ModelUser } from '../../../models/model-user';
   styleUrls: ['./form-registration.component.scss']
 })
 export class FormRegistrationComponent implements OnInit {
+  @ViewChild(FormBootstrapComponent) form: FormBootstrapComponent;
+
   user: ModelUser = new ModelUser();
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
-  createUser(complete: Function) {
-    console.log('submit form');
+  createUser = (complete: Function) => {
+    this.authService.register(this.user)
+      .then(this.logInNewUser)
+      .catch((response) => {
+        this.form.messageError = response.message;
+        complete();
+      });
+  };
+
+  logInNewUser = (user: ModelUser) => {
+    this.authService.login(this.user)
+      .then(() => {
+        this.router.navigateByUrl('/');
+      }).catch(() => {
+        console.log('dump user on login page');
+      });
   }
 }

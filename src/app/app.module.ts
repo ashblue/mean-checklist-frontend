@@ -11,6 +11,8 @@ import { FormRegistrationComponent } from './modules/forms/form-registration/for
 import { FormsModule } from '@angular/forms';
 import { FormBootstrapComponent } from './modules/forms/form-bootstrap/form-bootstrap.component';
 import { PageTitleComponent } from './modules/layouts/page-title/page-title.component';
+import { AuthService } from './services/auth/auth.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,12 @@ import { PageTitleComponent } from './modules/layouts/page-title/page-title.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

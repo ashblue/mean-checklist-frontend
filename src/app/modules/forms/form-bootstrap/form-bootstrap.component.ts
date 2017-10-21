@@ -8,6 +8,7 @@ import { NgForm, NgModel } from '@angular/forms';
 })
 export class FormBootstrapComponent implements OnInit, AfterViewInit {
   loading = false;
+  messageError: string;
 
   @Input() onSubmit: (complete: Function) => void;
 
@@ -32,10 +33,11 @@ export class FormBootstrapComponent implements OnInit, AfterViewInit {
    * Calls submit and waits for a complete callback. As soon as complete is detected the form will be re-enabled.
    */
   submit() {
+    this.messageError = null;
     this.loading = true;
 
     if (this.onSubmit) {
-      this.onSubmit(this.complete);
+      this.onSubmit(this.complete.bind(this));
       return;
     }
 
@@ -43,6 +45,6 @@ export class FormBootstrapComponent implements OnInit, AfterViewInit {
   }
 
   complete() {
-    this.loading = true;
+    this.loading = false;
   }
 }
