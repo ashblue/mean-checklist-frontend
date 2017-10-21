@@ -1,0 +1,51 @@
+<app-form-bootstrap [onSubmit]="createUser">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text"
+           id="name"
+           class="form-control"
+           required
+           [(ngModel)]="user.name"
+           name="name">
+    <div class="invalid-feedback">
+      Please provide a name
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email"
+           id="email"
+           class="form-control"
+           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
+           required
+           [(ngModel)]="user.email"
+           name="email">
+    <div class="invalid-feedback">
+      Please provide a valid email
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password"
+           id="password"
+           class="form-control"
+           required
+           minlength="8"
+           [(ngModel)]="user.password"
+           name="password">
+    <div class="invalid-feedback">
+      Please provide a valid password
+    </div>
+  </div>
+
+  <p>
+    <button
+      class="btn btn-primary"
+      type="submit">
+      Register
+    </button>
+  </p>
+
+</app-form-bootstrap>
