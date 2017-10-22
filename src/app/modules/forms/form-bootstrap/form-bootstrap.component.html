@@ -1,0 +1,17 @@
+<form (ngSubmit)="bootstrapForm.form.valid && submit()"
+      [class.was-validated]="bootstrapForm.submitted"
+      #bootstrapForm="ngForm">
+  <fieldset [attr.disabled]="loading ? true : null">
+    <ng-content></ng-content>
+
+    <p *ngIf="messageError" class="alert alert-danger" role="alert">
+      {{messageError}}
+    </p>
+
+    <p *ngIf="loading" class="h3">
+      <i class="fa fa-circle-o-notch fa-spin"></i>
+      Loading...
+    </p>
+
+  </fieldset>
+</form>

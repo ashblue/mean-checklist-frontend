@@ -1,0 +1,4 @@
+// Override bootstrap 4 bug where invalid messages always display
+.invalid-feedback {
+  display: none !important;
+}
