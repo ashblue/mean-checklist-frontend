@@ -14,7 +14,7 @@ export class NoauthOnlyGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if (this.authService.isUserLoggedIn) {
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/checklists');
       return false;
     }
 

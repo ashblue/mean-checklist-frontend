@@ -17,6 +17,10 @@ import { LoginComponent } from './pages/auth/login/login.component';
 import { FormLoginComponent } from './modules/forms/form-login/form-login.component';
 import { NoauthOnlyGuard } from './guards/noauth/noauth-only.guard';
 import { UsersOnlyGuard } from './guards/users/users-only.guard';
+import { PageChecklistAllComponent } from './pages/checklists/page-checklist-all/page-checklist-all.component';
+import { ChecklistGalleryComponent } from './modules/checklists/checklist-gallery/checklist-gallery.component';
+import { ChecklistPreviewComponent } from './modules/checklists/checklist-preview/checklist-preview.component';
+import { ChecklistsService } from './services/checklists/checklists.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,10 @@ import { UsersOnlyGuard } from './guards/users/users-only.guard';
     FormBootstrapComponent,
     PageTitleComponent,
     LoginComponent,
-    FormLoginComponent
+    FormLoginComponent,
+    PageChecklistAllComponent,
+    ChecklistGalleryComponent,
+    ChecklistPreviewComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +46,7 @@ import { UsersOnlyGuard } from './guards/users/users-only.guard';
   ],
   providers: [
     AuthService,
+    ChecklistsService,
     NoauthOnlyGuard,
     UsersOnlyGuard
   ],

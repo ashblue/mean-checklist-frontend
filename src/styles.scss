@@ -7,3 +7,8 @@
 .custom-select:valid ~ .invalid-tooltip, .custom-select.is-valid ~ .invalid-feedback, .custom-select.is-valid ~ .invalid-tooltip {
   display: none;
 }
+
+// Bootstrap does not include a pointer by default on buttons. Wtf Bootstrap, so not cool
+button {
+  cursor: pointer;
+}

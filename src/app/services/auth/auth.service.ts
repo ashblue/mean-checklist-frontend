@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { ModelUser } from '../../models/model-user';
 import { Http, Headers } from '@angular/http';
-
-import 'rxjs/add/operator/toPromise';
 import { ModelToken } from '../../models/model-token';
 import { Router } from '@angular/router';
+
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 /**
