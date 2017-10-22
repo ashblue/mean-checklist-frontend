@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { AuthService } from '../auth/auth.service';
-
-// import 'rxjs/add/operator/toPromise';
 import { ModelChecklist } from '../../models/model-checklist';
+
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class ChecklistsService {
@@ -25,6 +25,12 @@ export class ChecklistsService {
     return this.http.get(this.baseUrl, {headers: this.headers})
       .toPromise()
       .then(res => res.json() as ModelChecklist, this.handleError);
+  }
+
+  delete(checklist: ModelChecklist) {
+    return this.http.delete(`${this.baseUrl}/${checklist.id}`, {headers: this.headers})
+      .toPromise()
+      .then(res => checklist, this.handleError);
   }
 
   private handleError(error: any): Promise<any> {

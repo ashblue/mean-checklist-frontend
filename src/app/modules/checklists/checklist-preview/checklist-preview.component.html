@@ -14,7 +14,9 @@
     <p class="mb-0">
       <a routerLink="/checklists/{{checklist.id}}" class="btn btn-primary">Edit</a>
 
-      <button class="btn btn-danger">
+      <button class="btn btn-danger"
+              (click)="delete()"
+              [attr.disabled]="isDeleting ? true : null">
         <i class="fa fa-trash" aria-hidden="true"></i>
       </button>
     </p>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ModelChecklist } from '../../../models/model-checklist';
 
 @Component({
@@ -8,6 +8,7 @@ import { ModelChecklist } from '../../../models/model-checklist';
 })
 export class ChecklistGalleryComponent implements OnInit {
   @Input() checklists: ModelChecklist[];
+  @Output() onDelete: EventEmitter<ModelChecklist> = new EventEmitter<ModelChecklist>()
 
   constructor() { }
 

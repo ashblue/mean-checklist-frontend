@@ -17,4 +17,9 @@ export class PageChecklistAllComponent implements OnInit {
       this.checklists = results;
     });
   }
+
+  onDelete(checklist: ModelChecklist) {
+    const index = this.checklists.indexOf(checklist);
+    this.checklists.splice(index, 1);
+  }
 }

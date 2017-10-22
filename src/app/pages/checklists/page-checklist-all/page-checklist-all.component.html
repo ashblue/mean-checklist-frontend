@@ -1,7 +1,11 @@
 <app-page-title>Checklists</app-page-title>
 
 <div class="container">
-  <app-checklist-gallery [checklists]="checklists" *ngIf="checklists && checklists.length > 0"></app-checklist-gallery>
+  <app-checklist-gallery [checklists]="checklists"
+                         (onDelete)="onDelete($event)"
+                         *ngIf="checklists && checklists.length > 0">
+
+  </app-checklist-gallery>
 
   <div class="jumbotron bg-dark text-white" *ngIf="checklists && checklists.length === 0">
     <h1 class="display-3">No Checklists</h1>
