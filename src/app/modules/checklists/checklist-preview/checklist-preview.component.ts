@@ -1,3 +1,5 @@
+import * as moment from 'moment';
+
 import { Component, Input, OnInit } from '@angular/core';
 import { ModelChecklist } from '../../../models/model-checklist';
 
@@ -15,6 +17,10 @@ export class ChecklistPreviewComponent implements OnInit {
     });
 
     return complete.length;
+  }
+
+  get relativeDate() {
+    return moment(this.checklist.createdAt).fromNow();
   }
 
   constructor() { }
