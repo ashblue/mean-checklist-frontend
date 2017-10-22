@@ -2,6 +2,11 @@
   <app-page-title>Checklist: {{checklist.title}}</app-page-title>
 
   <div class="container">
-    <p>Content goes here</p>
+    <h3>{{checklist.tasks.length}} Tasks</h3>
+    <app-checklist-task *ngFor="let task of checklist.tasks"
+                        [checklist]="checklist"
+                        (onDestroy)="removeTask($event)"
+                        [task]="task">
+    </app-checklist-task>
   </div>
 </div>

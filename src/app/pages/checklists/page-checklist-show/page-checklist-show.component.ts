@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChecklistsService } from '../../../services/checklists/checklists.service';
 import { ModelChecklist } from '../../../models/model-checklist';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ModelTask } from '../../../models/model-task';
 
 @Component({
   selector: 'app-page-checklist-show',
@@ -29,5 +30,10 @@ export class PageChecklistShowComponent implements OnInit {
       }, () => {
         this.router.navigateByUrl('/404');
       });
+  }
+
+  removeTask(task: ModelTask) {
+    const index = this.checklist.tasks.indexOf(task);
+    this.checklist.tasks.splice(index, 1);
   }
 }

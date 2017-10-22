@@ -24,6 +24,7 @@ import { ChecklistsService } from './services/checklists/checklists.service';
 import { PageChecklistShowComponent } from './pages/checklists/page-checklist-show/page-checklist-show.component';
 import { FormChecklistComponent } from './modules/forms/form-checklist/form-checklist.component';
 import { Page404Component } from './pages/page404/page404.component';
+import { ChecklistTaskComponent } from './modules/checklists/checklist-task/checklist-task.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { Page404Component } from './pages/page404/page404.component';
     ChecklistPreviewComponent,
     PageChecklistShowComponent,
     FormChecklistComponent,
-    Page404Component
+    Page404Component,
+    ChecklistTaskComponent
   ],
   imports: [
     BrowserModule,
