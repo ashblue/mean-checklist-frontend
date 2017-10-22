@@ -22,4 +22,8 @@ export class PageChecklistAllComponent implements OnInit {
     const index = this.checklists.indexOf(checklist);
     this.checklists.splice(index, 1);
   }
+
+  onCreate(checklist: ModelChecklist) {
+    this.checklists.unshift(checklist);
+  }
 }

@@ -22,6 +22,7 @@ import { ChecklistGalleryComponent } from './modules/checklists/checklist-galler
 import { ChecklistPreviewComponent } from './modules/checklists/checklist-preview/checklist-preview.component';
 import { ChecklistsService } from './services/checklists/checklists.service';
 import { PageChecklistShowComponent } from './pages/checklists/page-checklist-show/page-checklist-show.component';
+import { FormChecklistComponent } from './modules/forms/form-checklist/form-checklist.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PageChecklistShowComponent } from './pages/checklists/page-checklist-sh
     PageChecklistAllComponent,
     ChecklistGalleryComponent,
     ChecklistPreviewComponent,
-    PageChecklistShowComponent
+    PageChecklistShowComponent,
+    FormChecklistComponent
   ],
   imports: [
     BrowserModule,

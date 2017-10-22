@@ -1,5 +1,5 @@
-<form (ngSubmit)="bootstrapForm.form.valid && submit()"
-      [class.was-validated]="bootstrapForm.submitted"
+<form (ngSubmit)="isValid && submit()"
+      [class.was-validated]="isDirty"
       #bootstrapForm="ngForm">
   <fieldset [attr.disabled]="loading ? true : null">
     <ng-content></ng-content>

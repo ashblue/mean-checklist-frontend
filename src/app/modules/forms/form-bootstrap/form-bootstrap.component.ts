@@ -9,11 +9,17 @@ import { NgForm, NgModel } from '@angular/forms';
 export class FormBootstrapComponent implements OnInit, AfterViewInit {
   loading = false;
   messageError: string;
+  isDirty: boolean;
 
   @Input() onSubmit: (complete: Function) => void;
 
   @ContentChildren(NgModel) inputs: QueryList<NgModel>;
   @ViewChild(NgForm) form: NgForm;
+
+  get isValid(): boolean {
+    this.isDirty = true;
+    return this.form.valid;
+  }
 
   constructor() {
   }
@@ -46,5 +52,10 @@ export class FormBootstrapComponent implements OnInit, AfterViewInit {
 
   complete() {
     this.loading = false;
+  }
+
+  reset() {
+    this.form.reset();
+    this.isDirty = false;
   }
 }

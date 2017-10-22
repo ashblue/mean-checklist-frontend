@@ -33,6 +33,12 @@ export class ChecklistsService {
       .then(res => checklist, this.handleError);
   }
 
+  create(checklist: ModelChecklist) {
+    return this.http.put(`${this.baseUrl}/create`, JSON.stringify(checklist), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json() as ModelChecklist, this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     if (error && error._body) {

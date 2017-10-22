@@ -1,6 +1,8 @@
 <app-page-title>Checklists</app-page-title>
 
 <div class="container">
+  <app-form-checklist (onCreate)="onCreate($event)"></app-form-checklist>
+
   <app-checklist-gallery [checklists]="checklists"
                          (onDelete)="onDelete($event)"
                          *ngIf="checklists && checklists.length > 0">
