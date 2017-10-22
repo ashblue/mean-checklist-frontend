@@ -7,6 +7,7 @@ import { NoauthOnlyGuard } from './guards/noauth/noauth-only.guard';
 import { UsersOnlyGuard } from './guards/users/users-only.guard';
 import { PageChecklistAllComponent } from './pages/checklists/page-checklist-all/page-checklist-all.component';
 import { PageChecklistShowComponent } from './pages/checklists/page-checklist-show/page-checklist-show.component';
+import { Page404Component } from './pages/page404/page404.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,14 @@ const routes: Routes = [
         component: PageChecklistShowComponent
       }
     ]
+  },
+  {
+    path: '404',
+    component: Page404Component
+  },
+  {
+    path: '**',
+    component: Page404Component
   }
 ];
 
