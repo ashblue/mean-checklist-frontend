@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import "styles/font-awesome/loader";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Override bootstrap 4 bug where invalid tooltips are set to display
+.was-validated .form-control:valid ~ .invalid-feedback, .was-validated .form-control:valid ~ .invalid-tooltip, .form-control.is-valid ~ .invalid-feedback, .form-control.is-valid ~ .invalid-tooltip, .was-validated
+.custom-select:valid ~ .invalid-feedback, .was-validated
+.custom-select:valid ~ .invalid-tooltip, .custom-select.is-valid ~ .invalid-feedback, .custom-select.is-valid ~ .invalid-tooltip {
+  display: none;
+}
+
+// Bootstrap does not include a pointer by default on buttons. Wtf Bootstrap, so not cool
+button {
+  cursor: pointer;
+}

@@ -1,4 +1,16 @@
-# MeanChecklistFrontend
+# MEAN Checklist - frontend
+
+## Quick start instructions
+
+1. Setup and install the [backend server](https://github.com/ashblue/mean-checklist-backend)
+1. In the backend server run `npm run start`
+1. On this repo clone it locally and run `npm install`
+1. Run `npm run start` to run the frontend. This will automatically connect to the already running backend via a proxy
+1. Visit [http://localhost:4200](http://localhost:4200) to view the fully functional site
+
+# Auto-Generated Angular 2 Docs
+
+#@ MeanChecklistFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.7.
 
