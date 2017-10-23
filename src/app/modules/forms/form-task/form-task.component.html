@@ -1,0 +1,30 @@
+<app-form-bootstrap [onSubmit]="create">
+  <div class="form-group row">
+    <label for="name"
+           class="col-lg-2 col-form-label">
+      Task Name
+    </label>
+
+    <div class="col-lg-7 mb-2">
+      <input type="text"
+             id="name"
+             class="form-control"
+             required
+             [(ngModel)]="task.title"
+             name="name">
+
+      <div class="invalid-feedback">
+        Please provide a valid name
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <button
+        #focus
+        class="btn btn-primary btn-block"
+        type="submit">
+        Create Task
+      </button>
+    </div>
+  </div>
+</app-form-bootstrap>

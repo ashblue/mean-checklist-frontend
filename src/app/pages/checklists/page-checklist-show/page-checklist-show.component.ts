@@ -36,4 +36,8 @@ export class PageChecklistShowComponent implements OnInit {
     const index = this.checklist.tasks.indexOf(task);
     this.checklist.tasks.splice(index, 1);
   }
+
+  onCreateTask(task: ModelTask) {
+    this.checklist.tasks.unshift(task);
+  }
 }

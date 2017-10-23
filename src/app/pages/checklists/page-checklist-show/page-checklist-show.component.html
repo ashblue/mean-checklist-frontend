@@ -2,6 +2,8 @@
   <app-page-title>Checklist: {{checklist.title}}</app-page-title>
 
   <div class="container">
+    <app-form-task (onCreate)="onCreateTask($event)" [checklist]="checklist"></app-form-task>
+
     <h3>{{checklist.tasks.length}} Tasks</h3>
     <app-checklist-task *ngFor="let task of checklist.tasks"
                         [checklist]="checklist"
