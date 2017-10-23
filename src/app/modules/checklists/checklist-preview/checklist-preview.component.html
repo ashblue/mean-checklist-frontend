@@ -5,7 +5,11 @@
 
   <div class="card-body">
     <ul class="list-unstyled mb-0">
-      <li>Tasks Complete: {{completedTaskCount}} / {{checklist.tasks.length}}</li>
+      <li>
+        Tasks Complete:
+        <span *ngIf="checklist.tasks.length > 0">{{completedTaskCount}} / {{checklist.tasks.length}}</span>
+        <span *ngIf="checklist.tasks.length === 0">None</span>
+      </li>
       <li><small>Created: {{relativeDate}}</small></li>
     </ul>
   </div>

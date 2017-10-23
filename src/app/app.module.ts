@@ -22,6 +22,10 @@ import { ChecklistGalleryComponent } from './modules/checklists/checklist-galler
 import { ChecklistPreviewComponent } from './modules/checklists/checklist-preview/checklist-preview.component';
 import { ChecklistsService } from './services/checklists/checklists.service';
 import { PageChecklistShowComponent } from './pages/checklists/page-checklist-show/page-checklist-show.component';
+import { FormChecklistComponent } from './modules/forms/form-checklist/form-checklist.component';
+import { Page404Component } from './pages/page404/page404.component';
+import { ChecklistTaskComponent } from './modules/checklists/checklist-task/checklist-task.component';
+import { FormTaskComponent } from './modules/forms/form-task/form-task.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { PageChecklistShowComponent } from './pages/checklists/page-checklist-sh
     PageChecklistAllComponent,
     ChecklistGalleryComponent,
     ChecklistPreviewComponent,
-    PageChecklistShowComponent
+    PageChecklistShowComponent,
+    FormChecklistComponent,
+    Page404Component,
+    ChecklistTaskComponent,
+    FormTaskComponent
   ],
   imports: [
     BrowserModule,
